@@ -5,6 +5,8 @@ import Footer from 'components/shared/footer';
 import Header from 'components/shared/header';
 import MobileMenu from 'components/shared/mobile-menu';
 import SEO from 'components/shared/seo';
+// import LINKS from 'constants/links';
+import MENUS from 'constants/menus';
 
 const LayoutMain = ({ children }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,7 +15,11 @@ const LayoutMain = ({ children }) => {
   return (
     <>
       <SEO />
-      <Header isMobileMenuOpen={isMobileMenuOpen} onBurgerClick={handleHeaderBurgerClick} />
+      <Header
+        navigation={MENUS}
+        isMobileMenuOpen={isMobileMenuOpen}
+        onBurgerClick={handleHeaderBurgerClick}
+      />
       <main>{children}</main>
       <Footer />
       <MobileMenu isOpen={isMobileMenuOpen} />
