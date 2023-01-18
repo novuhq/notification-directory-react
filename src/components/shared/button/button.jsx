@@ -8,15 +8,15 @@ import Link from 'components/shared/link';
 const styles = {
   base: 'inline-flex items-center justify-center !leading-none text-center whitespace-nowrap rounded transition-[colors, opacity] duration-200 outline-none uppercase font-medium',
   size: {
-    sm: 'h-12 px-6 text-sm',
-    xs: 'h-10 px-5 text-xs',
+    lg: 'h-12 px-6 text-sm',
+    sm: 'h-10 px-5 text-xs',
   },
   // TODO: Add themes. Better to name the theme using this pattern: "${color-name}-${theme-type}", e.g. "black-filled"
   //       If there is no dividing between theme types, then feel free to use just color names, e.g. "black"
   //       Check out an example by a link above for better understanding
   theme: {
-    'purple-filled': 'bg-[#8080FF] text-white',
-    'gray-filled': 'bg-gray-1 text-white',
+    'purple-filled': 'bg-purple-2 text-white hover:bg-purple-3',
+    'gray-filled': 'bg-gray-2 text-white hover:bg-gray-3',
   },
 };
 

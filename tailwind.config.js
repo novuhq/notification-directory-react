@@ -14,7 +14,7 @@ module.exports = {
     },
     fontSize: {
       xs: ['12px'],
-      sm: ['14px'],
+      sm: ['14px', { lineHeight: 1.5 }],
       base: ['16px'],
       lg: ['18px'],
       xl: ['20px'],
@@ -57,15 +57,19 @@ module.exports = {
         10: '#E6E6E6',
       },
       purple: {
+        1: '#B3B3FF',
+        2: '#8080FF',
+        // make the previous color darker by 20%
+        3: '#7C3BED',
         DEFAULT: '#B3B3FF',
       },
     }),
     backgroundImage: {
-      'input-gradient':
-        'linear-gradient(268.91deg, #FFBB33 14.72%, #FFFFFF 51.94%, #E300BD 82.34%, #FF006A 94.81%)',
-      'hero-gradient': "url('components/pages/hacktoberfest/hero/images/background.svg')",
-      'blue-gradient': 'linear-gradient(135deg, #FFE27D 14.04%, #64E3FF 50.5%, #9192FF 86.21%)',
-      ...defaultTheme.backgroundImage,
+      'mobile-gradient':
+        'radial-gradient(100% 100% at 100% 0%, rgba(255, 216, 77, 0.9) 0%, rgba(255, 216, 77, 0) 88.98%), linear-gradient(111.83deg, #8080FF -0.43%, #B3B3FF 53.44%, #7C3BED 100%)',
+      'light-gradient':
+        'linear-gradient(119.61deg, rgba(151, 77, 255, 0.5) 18.23%, #4C00E3 86.99%)',
+      noise: "url('/images/noise.png')",
     },
     screens: {
       '2xl': { max: '1919px' },
@@ -74,6 +78,11 @@ module.exports = {
       md: { max: '1023px' },
       sm: { max: '767px' },
       xs: { max: '359px' },
+    },
+    extend: {
+      lineHeight: {
+        denser: '1.125',
+      },
     },
   },
   plugins: [require('tailwindcss-safe-area')],

@@ -7,11 +7,9 @@ const MENUS = {
     { text: 'GitHub', ...LINKS.github },
   ],
   footer: [
-    [
-      { text: 'Discord', ...LINKS.discord },
-      { text: 'Twitter', ...LINKS.twitter },
-      { text: 'GitHub', ...LINKS.github },
-    ],
+    { text: 'Discord', ...LINKS.discord },
+    { text: 'Twitter', ...LINKS.twitter },
+    { text: 'GitHub', ...LINKS.github },
   ],
   mobile: [
     {

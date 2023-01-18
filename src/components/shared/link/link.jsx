@@ -6,7 +6,7 @@ import React from 'react';
 
 // Example of the code — https://user-images.githubusercontent.com/20713191/144221096-1939c382-4ab8-4d28-b0e6-7bbe3a8f8556.png
 const styles = {
-  base: 'inline-block leading-none uppercase transition-colors duration-200 hover:text-primary-1',
+  base: 'inline-block leading-none',
   // TODO: Add sizes. Better to write down all sizes and go from higher to lower, e.g. "xl", "lg", "md", "sm", "xs"
   //       The name of the size cannot be lower than the font size that being used, e.g. "sm" size cannot have font-size "xs"
   //       Check out an example by a link above for better understanding
@@ -17,7 +17,8 @@ const styles = {
   //       If there is no dividing between theme types, then feel free to use just color names, e.g. "black"
   //       Check out an example by a link above for better understanding
   theme: {
-    purple: 'text-white',
+    purple: 'text-purple-1 hover:text-white',
+    white: 'text-white hover:text-purple-1',
   },
 };
 

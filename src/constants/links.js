@@ -3,7 +3,9 @@ export default {
   home: {
     to: '/',
   },
-
+  novu: {
+    to: 'https://novu.co/',
+  },
   // Social
   discord: {
     to: 'https://discord.gg/9wcGSf22PM',
