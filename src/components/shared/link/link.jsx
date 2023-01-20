@@ -2,7 +2,6 @@
 import clsx from 'clsx';
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
-import React from 'react';
 
 // Example of the code — https://user-images.githubusercontent.com/20713191/144221096-1939c382-4ab8-4d28-b0e6-7bbe3a8f8556.png
 const styles = {
@@ -22,7 +21,14 @@ const styles = {
   },
 };
 
-const Link = ({ className: additionalClassName, size, theme, to, children, ...props }) => {
+const Link = ({
+  className: additionalClassName = null,
+  size = null,
+  theme = null,
+  to = null,
+  children,
+  ...props
+}) => {
   const className = clsx(
     size && theme && styles.base,
     styles.size[size],
@@ -51,13 +57,6 @@ Link.propTypes = {
   size: PropTypes.oneOf(Object.keys(styles.size)),
   theme: PropTypes.oneOf(Object.keys(styles.theme)),
   children: PropTypes.node.isRequired,
-};
-
-Link.defaultProps = {
-  className: null,
-  to: null,
-  size: null,
-  theme: null,
 };
 
 export default Link;

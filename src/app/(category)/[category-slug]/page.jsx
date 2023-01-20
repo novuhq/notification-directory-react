@@ -33,7 +33,7 @@ const CategoryPage = async ({ params: { 'category-slug': categorySlug } }) => {
 
   return (
     <div className="container safe-paddings mt-20">
-      <div className="mb-6">
+      <div className="mb-6 lg:mb-2">
         <Link to="/" theme="purple">
           List of all categories
         </Link>
@@ -47,13 +47,13 @@ const CategoryPage = async ({ params: { 'category-slug': categorySlug } }) => {
         </p>
       </div>
       <div className="mb-40">
-        <div className="grid grid-cols-4 gap-x-16 gap-y-5">
-          {/* {subCategories.lenght > 0 &&
+        <div className="grid grid-cols-4 gap-x-16 gap-y-5 md:grid-cols-2 sm:grid-cols-1">
+          {subCategories.length > 0 &&
             subCategories.map((subCategory, index) => (
               <Link theme="purple" key={index} to={`/${matchingCategory.slug}/${subCategory.slug}`}>
                 {subCategory.subCategory}
               </Link>
-            ))} */}
+            ))}
         </div>
       </div>
     </div>

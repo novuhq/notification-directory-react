@@ -1,8 +1,5 @@
-import slugify from 'slugify';
-
-import Button from 'components/shared/button';
+import TemplateInfo from 'components/pages/sub-category/template-info';
 import Link from 'components/shared/link';
-import LINKS from 'constants/links';
 import {
   addSlugToCategories,
   addSlugToSubCategories,
@@ -10,18 +7,6 @@ import {
   findSubCategoryBySlug,
 } from 'utils';
 import { getCategories, getSubCategories, getNotifications } from 'utils/api/queries';
-
-const colors = ['rgba(255, 179, 204, 1)', 'rgba(255, 230, 179, 1)'];
-const variables = [
-  {
-    name: '{{play_name}}',
-    description: 'The name of the play',
-  },
-  {
-    name: '{{theater_name}}',
-    description: 'The name of the theater',
-  },
-];
 
 const SubCategorySlug = async ({
   params: { 'category-slug': categorySlug, 'sub-category-slug': subCategorySlug },
@@ -45,61 +30,15 @@ const SubCategorySlug = async ({
   );
 
   return (
-    <div className="container safe-paddings mt-20">
-      <div className="mb-56 grid grid-cols-2 gap-x-[30px]">
-        <div className="">
-          <div className="mb-6">
-            <Link to="/" theme="purple">
-              List of all categories
-            </Link>
-            <span className="mx-2 text-gray-5">/</span>
-            <Link to={`/${matchingCategory.slug}`} theme="purple">
-              {matchingCategory.category}
-            </Link>
-          </div>
-          <div className="mb-14">
-            <h1 className="mb-4 text-4xl">{matchingSubCategory.subCategory}</h1>
-            <p>{matchingSubCategory.description}</p>
-          </div>
-          <div className="mb-10">Code Snippet</div>
-          <div className="mb-14">
-            <h3 className="mb-3 text-xl">Variables</h3>
-            <ul className="border-b border-dashed border-purple-1/20">
-              {variables.map(({ name, description }, index) => (
-                <li
-                  key={index}
-                  className="flex border-t border-dashed border-purple-1/20 py-3 text-sm"
-                >
-                  <span style={{ color: colors[index] }} className="w-40">
-                    {name}
-                  </span>
-                  <p className="pl-3">{description}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="flex space-x-5">
-            <Button size="sm" theme="purple-filled">
-              Send a test notification
-            </Button>
-            <Button to={LINKS.novu.to} size="sm" theme="gray-filled">
-              Try it on Novu
-            </Button>
-          </div>
-        </div>
-        <div>
-          <div className=" relative bg-mobile-gradient pb-[100%]">
-            <img
-              src="/images/mobile.svg"
-              loading="eager"
-              className="translate absolute bottom-0 left-1/2 -translate-x-1/2"
-            />
-          </div>
-        </div>
-      </div>
+    <div className="container safe-paddings relative pt-20">
+      <div className="absolute -left-[600px] top-[-100px] h-[692px] w-[814px] bg-light-gradient opacity-20 blur-[97px]" />
+      <div className="absolute -right-[200px] top-[300px] h-[383px] w-[404px] bg-warm-gradient opacity-30 blur-[97px]" />
+      <TemplateInfo matchingCategory={matchingCategory} matchingSubCategory={matchingSubCategory} />
       <div className="mb-40">
-        <h2 className="mb-14 text-center text-4xl">Other notification types for Social Media</h2>
-        <div className="grid grid-cols-4 gap-x-16 gap-y-5">
+        <h2 className="mb-14 text-center text-4xl md:text-3xl">
+          Other notification types for Social Media
+        </h2>
+        <div className="grid grid-cols-4 gap-x-16 gap-y-5 md:grid-cols-2 sm:grid-cols-1">
           {otherSubCategories.map((subCategory, index) => (
             <Link theme="purple" key={index} to={`/${matchingCategory.slug}/${subCategory.slug}`}>
               {subCategory.subCategory}

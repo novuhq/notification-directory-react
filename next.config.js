@@ -1,6 +1,5 @@
 module.exports = {
   poweredByHeader: false,
-  trailingSlash: true,
   experimental: {
     appDir: true,
   },

@@ -64,13 +64,7 @@ module.exports = {
         DEFAULT: '#B3B3FF',
       },
     }),
-    backgroundImage: {
-      'mobile-gradient':
-        'radial-gradient(100% 100% at 100% 0%, rgba(255, 216, 77, 0.9) 0%, rgba(255, 216, 77, 0) 88.98%), linear-gradient(111.83deg, #8080FF -0.43%, #B3B3FF 53.44%, #7C3BED 100%)',
-      'light-gradient':
-        'linear-gradient(119.61deg, rgba(151, 77, 255, 0.5) 18.23%, #4C00E3 86.99%)',
-      noise: "url('/images/noise.png')",
-    },
+
     screens: {
       '2xl': { max: '1919px' },
       xl: { max: '1535px' },
@@ -82,6 +76,15 @@ module.exports = {
     extend: {
       lineHeight: {
         denser: '1.125',
+      },
+      backgroundImage: {
+        'mobile-gradient':
+          'radial-gradient(100% 100% at 100% 0%, rgba(255, 216, 77, 0.9) 0%, rgba(255, 216, 77, 0) 88.98%), linear-gradient(111.83deg, #8080FF -0.43%, #B3B3FF 53.44%, #7C3BED 100%)',
+        'light-gradient':
+          'linear-gradient(119.61deg, rgba(151, 77, 255, 0.5) 18.23%, #4C00E3 86.99%)',
+        noise: "url('/images/noise.png')",
+        'text-gradient': 'linear-gradient(180deg, #FFFFFF 24.06%, rgba(255, 255, 255, 0.6) 100%)',
+        'warm-gradient': 'linear-gradient(192.71deg, #FFD84D 0%, #6400E3 93.66%)',
       },
     },
   },

@@ -22,7 +22,6 @@ const Head = async ({
   const matchingSubCategory = findSubCategoryBySlug(subCategories, subCategorySlug);
 
   const title = `${MAIN_TITLE}${SEPARATOR}${matchingCategory.category}${SEPARATOR}${matchingSubCategory.subCategory}`;
-
   return <HeadMetaTags title={title} description={matchingSubCategory.description} />;
 };
 

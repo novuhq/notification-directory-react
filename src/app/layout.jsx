@@ -8,7 +8,7 @@ const RootLayout = ({ children }) => (
     <body className=" bg-black bg-noise text-white">
       <div className="flex min-h-screen flex-col overflow-hidden">
         <Header />
-        <main>{children}</main>
+        <div>{children}</div>
         <Footer />
       </div>
     </body>

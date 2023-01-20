@@ -8,7 +8,7 @@ import Link from 'components/shared/link';
 const styles = {
   base: 'inline-flex items-center justify-center !leading-none text-center whitespace-nowrap rounded transition-[colors, opacity] duration-200 outline-none uppercase font-medium',
   size: {
-    lg: 'h-12 px-6 text-sm',
+    lg: 'h-12 px-6 text-sm sm:h-10 sm:px-5 sm:text-xs',
     sm: 'h-10 px-5 text-xs',
   },
   // TODO: Add themes. Better to name the theme using this pattern: "${color-name}-${theme-type}", e.g. "black-filled"
@@ -20,7 +20,14 @@ const styles = {
   },
 };
 
-const Button = ({ className: additionalClassName, to, size, theme, children, ...otherProps }) => {
+const Button = ({
+  className: additionalClassName = null,
+  to = null,
+  size,
+  theme,
+  children,
+  ...otherProps
+}) => {
   const className = clsx(styles.base, styles.size[size], styles.theme[theme], additionalClassName);
 
   const Tag = to ? Link : 'button';
@@ -38,11 +45,6 @@ Button.propTypes = {
   size: PropTypes.oneOf(Object.keys(styles.size)).isRequired,
   theme: PropTypes.oneOf(Object.keys(styles.theme)).isRequired,
   children: PropTypes.node.isRequired,
-};
-
-Button.defaultProps = {
-  className: null,
-  to: null,
 };
 
 export default Button;
