@@ -8,12 +8,12 @@ import {
 } from 'utils';
 import { getCategories, getSubCategories, getNotifications } from 'utils/api/queries';
 
-const SubCategorySlug = async ({
+const SubCategoryLayout = async ({
+  children,
   params: { 'category-slug': categorySlug, 'sub-category-slug': subCategorySlug },
 }) => {
   let categories = await getCategories();
   categories = addSlugToCategories(categories);
-  // console.log(categories);
   const matchingCategory = findCategoryBySlug(categories, categorySlug);
   // eslint-disable-next-line no-underscore-dangle
   let subCategories = await getSubCategories(matchingCategory._id);
@@ -33,7 +33,7 @@ const SubCategorySlug = async ({
     <div className="container safe-paddings relative pt-20">
       <div className="absolute -left-[600px] top-[-100px] h-[692px] w-[814px] bg-light-gradient opacity-20 blur-[97px]" />
       <div className="absolute -right-[200px] top-[300px] h-[383px] w-[404px] bg-warm-gradient opacity-30 blur-[97px]" />
-      <TemplateInfo matchingCategory={matchingCategory} matchingSubCategory={matchingSubCategory} />
+      {children}
       <div className="mb-40">
         <h2 className="mb-14 text-center text-4xl md:text-3xl">
           Other notification types for Social Media
@@ -50,6 +50,6 @@ const SubCategorySlug = async ({
   );
 };
 
-export default SubCategorySlug;
+export default SubCategoryLayout;
 
 export const revalidate = 60;

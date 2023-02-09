@@ -18,13 +18,14 @@ const Home = async () => {
               with ChatGPT
             </h1>
             <p className="text-gray-11 mt-5 max-w-[488px] text-lg leading-normal sm:max-w-none sm:text-center">
-              Lorem ipsum dolor sit amet consectetur. Lectus tortor proin tristique et. Sem
-              tincidunt libero sed neque.
+              Discover an extensive library of customizable notifications for your users. Choose
+              from various options to keep your audience engaged and informed. Focus on programming
+              rather than creativity.
             </p>
             <div className="mt-11 flex sm:mt-6 sm:items-center sm:justify-center">
               <Button
                 className="mr-6"
-                to="/cooking-and-recipe/new-recipe-added"
+                to="/e-commerce/order-confirmation/0"
                 theme="purple-filled"
                 size="lg"
               >
@@ -44,17 +45,18 @@ const Home = async () => {
       <section className="safe-paddings pt-30 relative  pb-40 ">
         <div className="container">
           <div className=" text-center">
-            <h2 className="text-4xl leading-tight text-white sm:text-3xl">Lorem ipsum dolor</h2>
+            <h2 className="text-4xl leading-tight text-white sm:text-3xl">
+              Discover the Power of Notifications
+            </h2>
             <p className="font-book text-gray-11 mx-auto mt-4 max-w-[592px] text-lg leading-normal">
-              Lorem ipsum dolor sit amet consectetur. Lectus tortor proin tristique et. Sem
-              tincidunt libero sed neque.
+              Unlock the full potential of your notifications with our diverse category library.
+              Discover the power of personalized notifications, focusing on code rather than copy.
             </p>
           </div>
           <ul className="relative z-10 mt-14 grid grid-cols-3 gap-x-8 gap-y-8 md:grid-cols-2 sm:grid-cols-1">
             {categories.map((category, index) => (
               <CategoryCard
                 title={category.category}
-                description="blablabla"
                 subCategories={category.subCategories}
                 key={index}
               />

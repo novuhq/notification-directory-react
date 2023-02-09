@@ -12,20 +12,18 @@ import AirplaneIcon from 'images/cards/airplane.inline.svg';
 //   shop: ShopIcon,
 // };
 
-const CategoryCard = ({ title, description, subCategories, categoryId }, index) => (
+const CategoryCard = ({ title, subCategories, categoryId }, index) => (
   // const Icon = icons[iconName];
-  // console.log('aaaaa');
   <li className="flex h-full flex-col bg-white/[0.04] p-6 text-left backdrop-blur-xl" key={index}>
     <div className="border-b border-dashed border-purple border-opacity-20 pb-6">
       <div className="flex align-middle">
-        <div className="mr-3.5 ">
+        {/* <div className="mr-3.5 ">
           <div className="flex h-8 w-8 items-center justify-center rounded bg-gray-3">
             <AirplaneIcon className="z-10 h-5 w-5" />
           </div>
-        </div>
+        </div> */}
         <h3 className="text-xl font-medium leading-snug text-white">{title}</h3>
       </div>
-      <p className="font-book text-gray-11 mt-3 leading-normal">{description}</p>
     </div>
     <ul className="mt-6 flex-grow">
       {subCategories &&
@@ -36,7 +34,7 @@ const CategoryCard = ({ title, description, subCategories, categoryId }, index) 
               theme="purple"
               to={`/${slugify(title, { lower: true })}/${slugify(item.subCategory, {
                 lower: true,
-              })}`}
+              })}/0`}
             >
               {item.subCategory}
             </Link>

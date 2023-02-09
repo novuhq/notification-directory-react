@@ -2,16 +2,31 @@
 
 import clsx from 'clsx';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+import ArrowLeft from './arrow-left.inline.svg';
+import ArrowRight from './arrow-right.inline.svg';
 import CardSvg from './card.inline.svg';
 import CloseSvg from './close.inline.svg';
 
-const Mobile = ({ notification }) => {
+const Mobile = ({
+  notificationId,
+  notificationMsg,
+  nextNotificationIndex,
+  previousNotificationIndex,
+}) => {
   const [currentDate, setCurrentDate] = useState(false);
   const [currentTime, setCurrentTime] = useState(false);
+  // get current path of the page
+  const pathname = usePathname();
 
-  const truncatedMessage = (msg) => (msg.length > 60 ? `${msg.slice(0, 60)}...` : msg);
+  const truncatedMessage = (msg) => (msg.length > 57 ? `${msg.slice(0, 57)}...` : msg);
+
+  // if pathName has this pattern /e-commerce/order-confirmation/2 then we need to remove the last part
+  // and get the pathName as /e-commerce/order-confirmation
+  const prevPath = pathname.split('/').slice(0, -1).join('/');
 
   useEffect(() => {
     // assign to a variable current date in this format January 10, Tuesday
@@ -33,11 +48,23 @@ const Mobile = ({ notification }) => {
   }, []);
   return (
     <div className=" relative overflow-hidden bg-mobile-gradient pb-[100%] md:h-[500px] md:pb-0">
+      <Link
+        href={`${prevPath}/${previousNotificationIndex}`}
+        className="absolute top-1/2 left-10 z-10 block -translate-y-1/2 sm:left-4"
+      >
+        <ArrowLeft className="w-10" />
+      </Link>
+      <Link
+        href={`${prevPath}/${nextNotificationIndex}`}
+        className="absolute top-1/2 right-10 z-10 block -translate-y-1/2"
+      >
+        <ArrowRight className="w-10" />
+      </Link>
       <div className="lg:-translate-y-10">
         <img
           src="/images/mobile.svg"
           loading="eager"
-          className="translate absolute top-[40px] bottom-0 left-1/2 -translate-x-1/2"
+          className="translate absolute top-[40px] bottom-0 left-1/2 w-[478px] -translate-x-1/2"
         />
         <div className="absolute left-1/2 top-[80px] w-[362px] -translate-x-1/2">
           <div
@@ -65,7 +92,7 @@ const Mobile = ({ notification }) => {
                 <AnimatePresence>
                   <motion.div
                     className="absolute left-0 right-0 "
-                    key={notification.id}
+                    key={notificationId}
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 100, opacity: 0 }}
@@ -73,16 +100,16 @@ const Mobile = ({ notification }) => {
                     <CardSvg className="-m-[6px]" />
                     <div className="absolute top-1 left-0 right-0 p-3">
                       <div className="flex">
-                        <div className="h-11 w-11 overflow-hidden rounded-full shadow-2xl">
-                          <img src={notification.image} />
+                        <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-gray-1 text-white shadow-2xl">
+                          A
                         </div>
                         <div className="ml-[10px]">
                           <div className="flex items-center">
-                            <div className="mr-3 text-[14px]">{notification.sender}</div>
+                            <div className="mr-3 text-[14px]">Acme.corp</div>
                             <div className="mt-[4px] text-[10px] text-white/50">1 second ago</div>
                           </div>
-                          <div className="w-[230px] text-[15px]">
-                            {truncatedMessage(notification.msg)}
+                          <div className="w-[230px] text-[14px]">
+                            {truncatedMessage(notificationMsg)}
                           </div>
                         </div>
                       </div>

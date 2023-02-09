@@ -1,20 +1,7 @@
 import slugify from 'slugify';
 
 import Link from 'components/shared/link';
-
-const getCategories = async () => {
-  const categoriesResponse = await fetch('https://api.notifications.directory/categories/');
-  const categories = await categoriesResponse.json();
-  return categories;
-};
-
-const getSubCategories = async (categoryId) => {
-  const subCategoriesResponse = await fetch(
-    `https://api.notifications.directory/categories/${categoryId}/sub`
-  );
-  const subCategories = await subCategoriesResponse.json();
-  return subCategories;
-};
+import { getCategories, getSubCategories } from 'utils/api/queries';
 
 const CategoryPage = async ({ params: { 'category-slug': categorySlug } }) => {
   const categories = await getCategories();
@@ -40,17 +27,16 @@ const CategoryPage = async ({ params: { 'category-slug': categorySlug } }) => {
       </div>
       <div className="mb-14 max-w-[500px]">
         <h1 className="mb-4 text-4xl">{matchingCategory.category}</h1>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-          been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-          a galley of type and scrambled it to make a type specimen book.
-        </p>
       </div>
       <div className="mb-40">
         <div className="grid grid-cols-4 gap-x-16 gap-y-5 md:grid-cols-2 sm:grid-cols-1">
           {subCategories.length > 0 &&
             subCategories.map((subCategory, index) => (
-              <Link theme="purple" key={index} to={`/${matchingCategory.slug}/${subCategory.slug}`}>
+              <Link
+                theme="purple"
+                key={index}
+                to={`/${matchingCategory.slug}/${subCategory.slug}/0`}
+              >
                 {subCategory.subCategory}
               </Link>
             ))}
