@@ -2,6 +2,8 @@
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { useFormik } from 'formik';
+import NextLink from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 import Mobile from 'components/pages/sub-category/mobile';
@@ -72,6 +74,9 @@ const TemplateInfo = ({
   const [open, setOpen] = useState(false);
   const [customNotification, setCustomNotification] = useState(undefined);
 
+  const pathname = usePathname();
+  const prevPath = pathname.split('/').slice(0, -1).join('/');
+
   const notification = notifications[currentNotificationIndex];
   // Calculate index of the next notification, if it's the last notification, go back to the first one
   const nextNotificationIndex =
@@ -113,8 +118,18 @@ const TemplateInfo = ({
         <div className="mb-14">
           <h1 className="mb-4 text-4xl">{matchingSubCategory.subCategory}</h1>
         </div>
-        <div className="mb-4">
-          Notification {currentNotificationIndex + 1} of {notifications.length}
+        <div className="mb-4 flex justify-between gap-4">
+          <div>
+            Notification {currentNotificationIndex + 1} of {notifications.length}
+          </div>
+          <div className="hidden gap-4 sm:flex">
+            <NextLink href={`${prevPath}/${previousNotificationIndex}`} className="hidden sm:block">
+              {'<'} Previous
+            </NextLink>
+            <NextLink href={`${prevPath}/${nextNotificationIndex}`} className="hidden sm:block">
+              Next {'>'}
+            </NextLink>
+          </div>
         </div>
         <div
           className="mb-10 bg-white/[0.08] px-4 py-3 backdrop-blur-xl"

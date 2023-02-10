@@ -50,17 +50,17 @@ const Mobile = ({
     <div className=" relative overflow-hidden bg-mobile-gradient pb-[100%] md:h-[500px] md:pb-0">
       <Link
         href={`${prevPath}/${previousNotificationIndex}`}
-        className="absolute top-1/2 left-10 z-10 block -translate-y-1/2 sm:left-4"
+        className="absolute top-1/2 left-10 z-10 block -translate-y-1/2 lg:left-3  sm:hidden"
       >
         <ArrowLeft className="w-10" />
       </Link>
       <Link
         href={`${prevPath}/${nextNotificationIndex}`}
-        className="absolute top-1/2 right-10 z-10 block -translate-y-1/2"
+        className="absolute top-1/2 right-10 z-10 block -translate-y-1/2 lg:right-3 sm:hidden"
       >
         <ArrowRight className="w-10" />
       </Link>
-      <div className="lg:-translate-y-10">
+      <div className="lg:-translate-y-10 sm:-mx-[45px]">
         <img
           src="/images/mobile.svg"
           loading="eager"
@@ -108,7 +108,7 @@ const Mobile = ({
                             <div className="mr-3 text-[14px]">Acme.corp</div>
                             <div className="mt-[4px] text-[10px] text-white/50">1 second ago</div>
                           </div>
-                          <div className="w-[230px] text-[14px]">
+                          <div className="w-[240px] text-[14px]">
                             {truncatedMessage(notificationMsg)}
                           </div>
                         </div>
