@@ -1,4 +1,5 @@
 // import prop types
+import Script from 'next/script';
 import PropTypes from 'prop-types';
 
 const defaultTitle = 'Notification Generator';
@@ -16,6 +17,15 @@ const HeadMetaTags = ({ title, description, imagePath }) => (
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <Script id="google-analytics" strategy="afterInteractive">
+      {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-C1MJ9C9BTB');
+        `}
+    </Script>
   </>
 );
 
