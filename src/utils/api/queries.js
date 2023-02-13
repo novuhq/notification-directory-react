@@ -19,6 +19,9 @@ const getSubCategories = async (categoryId) => {
         `https://${process.env.REACT_APP_API}/categories/${categoryId}/sub`
     );
     const subCategories = await subCategoriesResponse.json();
+    if (!Array.isArray(subCategories)) {
+      return [];
+    }
     return subCategories;
   }
   catch (err) {
@@ -32,6 +35,9 @@ const getNotifications = async (subCategoryId) => {
         `https://${process.env.REACT_APP_API}/sub/${subCategoryId}/notifications`
     );
     const notifications = await notificationsResponse.json();
+    if (!Array.isArray(notifications)) {
+      return [];
+    }
     return notifications;
   }
   catch (err) {
