@@ -49,3 +49,16 @@ const CategoryPage = async ({ params: { 'category-slug': categorySlug } }) => {
 export default CategoryPage;
 
 export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const categories = await getCategories();
+
+  categories.forEach((category, index) => {
+    categories[index].slug = slugify(category.category, { lower: true });
+  });
+
+  console.log(categories);
+  return categories.map((category) => ({
+    'category-slug': category.slug,
+  }));
+}
