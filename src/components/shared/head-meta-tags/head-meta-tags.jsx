@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const defaultTitle = 'Notification Generator';
 const defaultDescription = 'Generate notifications for your website';
 const defaultImagePath = '/images/social-previews/index.jpg';
-import Script from 'next/script';
 const { SITE_URL } = process.env;
 
 const HeadMetaTags = ({ title, description, imagePath }) => (
@@ -17,15 +16,6 @@ const HeadMetaTags = ({ title, description, imagePath }) => (
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-      <Script id="google-analytics" strategy="afterInteractive">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-C1MJ9C9BTB');
-        `}
-      </Script>
   </>
 );
 
