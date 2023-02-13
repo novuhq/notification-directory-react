@@ -11,6 +11,9 @@ import { getCategories, getSubCategories } from 'utils/api/queries';
 const Head = async ({
   params: { 'category-slug': categorySlug, 'sub-category-slug': subCategorySlug },
 }) => {
+  if (!matchingCategory?._id) {
+    return <></>;
+  }
   let categories = await getCategories();
   categories = addSlugToCategories(categories);
   const matchingCategory = findCategoryBySlug(categories, categorySlug);

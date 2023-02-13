@@ -12,6 +12,9 @@ const SubCategoryLayout = async ({
   children,
   params: { 'category-slug': categorySlug, 'sub-category-slug': subCategorySlug },
 }) => {
+  if (!matchingSubCategory?._id) {
+    return <></>;
+  }
   let categories = await getCategories();
   categories = addSlugToCategories(categories);
   const matchingCategory = findCategoryBySlug(categories, categorySlug);
