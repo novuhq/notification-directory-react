@@ -20,7 +20,7 @@ const HeadMetaTags = ({ title, description, imagePath }) => (
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C1MJ9C9BTB" />
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments)}
+      function gtag(){window.dataLayer.push(arguments)}
       gtag('js', new Date());
 
       gtag('config', 'G-C1MJ9C9BTB');
