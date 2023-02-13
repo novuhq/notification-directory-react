@@ -6,6 +6,10 @@ const getCategories = async () => {
     }
     const categoriesResponse = await fetch(`https://${process.env.REACT_APP_API}/categories/`);
     categories = await categoriesResponse.json();
+    if (!Array.isArray(categories)) {
+      categories = [];
+      return [];
+    }
     return categories;
   }
   catch(e) {
