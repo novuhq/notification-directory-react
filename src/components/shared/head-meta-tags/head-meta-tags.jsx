@@ -19,10 +19,12 @@ const HeadMetaTags = ({ title, description, imagePath }) => (
     <link rel="icon" type="image/png" href="/favicon.png" />
     <script src="https://www.googletagmanager.com/gtag/js?id=G-C1MJ9C9BTB" async />
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){window.dataLayer.push(arguments)}
-      gtag('js', new Date());
-      gtag('config', 'G-C1MJ9C9BTB');
+    if (typeof window !== "undefined") {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments)}
+        gtag('js', new Date());
+        gtag('config', 'G-C1MJ9C9BTB');
+    }
     </script>
   </>
 );
