@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const defaultTitle = 'Notification Generator';
 const defaultDescription = 'Generate notifications for your website';
 const defaultImagePath = '/images/social-previews/index.jpg';
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 const { SITE_URL } = process.env;
 
@@ -18,14 +19,7 @@ const HeadMetaTags = ({ title, description, imagePath }) => (
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <script src="https://www.googletagmanager.com/gtag/js?id=G-C1MJ9C9BTB" async />
-    <script>
-    if (typeof window !== "undefined") {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){window.dataLayer.push(arguments)}
-        gtag('js', new Date());
-        gtag('config', 'G-C1MJ9C9BTB');
-    }
-    </script>
+    <GoogleAnalytics trackPageViews />
   </>
 );
 
