@@ -117,6 +117,7 @@ const TemplateInfo = ({
         </div>
         <div className="mb-14">
           <h1 className="mb-4 text-4xl">{matchingSubCategory.subCategory}</h1>
+          <p>{matchingSubCategory.description}</p>
         </div>
         <div className="mb-4 flex justify-between gap-4">
           <div>

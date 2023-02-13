@@ -40,7 +40,7 @@ const SubCategoryLayout = async ({
         </h2>
         <div className="grid grid-cols-4 gap-x-16 gap-y-5 md:grid-cols-2 sm:grid-cols-1">
           {otherSubCategories.map((subCategory, index) => (
-            <Link theme="purple" key={index} to={`/${matchingCategory.slug}/${subCategory.slug}`}>
+            <Link theme="purple" key={index} to={`/${matchingCategory.slug}/${subCategory.slug}/0`}>
               {subCategory.subCategory}
             </Link>
           ))}
