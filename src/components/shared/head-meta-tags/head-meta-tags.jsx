@@ -22,7 +22,6 @@ const HeadMetaTags = ({ title, description, imagePath }) => (
       window.dataLayer = window.dataLayer || [];
       function gtag(){window.dataLayer.push(arguments)}
       gtag('js', new Date());
-
       gtag('config', 'G-C1MJ9C9BTB');
     </script>
   </>
