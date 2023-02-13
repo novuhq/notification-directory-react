@@ -54,9 +54,9 @@ export default CategoryPage;
 export const revalidate = 60;
 
 export async function generateStaticParams() {
-  const categories = await getCategories();
+  const categories = (await getCategories()).filter(f => f._id && f.category);
 
-  categories.filter(f => f._id).forEach((category, index) => {
+  categories.forEach((category, index) => {
     categories[index].slug = slugify(category.category, { lower: true });
   });
 
