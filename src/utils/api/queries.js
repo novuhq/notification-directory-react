@@ -1,7 +1,11 @@
+let categories = undefined;
 const getCategories = async () => {
   try {
+    if (categories) {
+      return categories;
+    }
     const categoriesResponse = await fetch(`https://${process.env.REACT_APP_API}/categories/`);
-    const categories = await categoriesResponse.json();
+    categories = await categoriesResponse.json();
     return categories;
   }
   catch(e) {
