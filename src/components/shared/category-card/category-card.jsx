@@ -43,7 +43,7 @@ const CategoryCard = ({ title, subCategories, categoryId }, index) => (
     </ul>
     <Link
       className="mt-auto mt-7 flex align-middle text-sm font-medium uppercase text-white"
-      to={`${slugify(title, { lower: true })}`}
+      to={`/${slugify(title, { lower: true })}`}
     >
       show more <ArrowIcon className="my-auto ml-2 h-2.5 w-3.5 text-white" />
     </Link>
