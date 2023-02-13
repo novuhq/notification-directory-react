@@ -17,7 +17,7 @@ const HeadMetaTags = ({ title, description, imagePath }) => (
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C1MJ9C9BTB" />
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-C1MJ9C9BTB" async />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){window.dataLayer.push(arguments)}
