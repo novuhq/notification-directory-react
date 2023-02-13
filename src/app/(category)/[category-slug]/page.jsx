@@ -12,7 +12,7 @@ const CategoryPage = async ({ params: { 'category-slug': categorySlug } }) => {
   const matchingCategory = categories.find((category) => category.slug === categorySlug);
   // eslint-disable-next-line no-underscore-dangle
 
-  const subCategories = await getSubCategories(matchingCategory._id);
+  const subCategories = await getSubCategories(matchingCategory?._id);
 
   subCategories.forEach((subCategory, index) => {
     subCategories[index].slug = slugify(subCategory.subCategory, { lower: true });
@@ -53,7 +53,7 @@ export const revalidate = 60;
 export async function generateStaticParams() {
   const categories = await getCategories();
 
-  categories.forEach((category, index) => {
+  categories.filter(f => f._id).forEach((category, index) => {
     categories[index].slug = slugify(category.category, { lower: true });
   });
 

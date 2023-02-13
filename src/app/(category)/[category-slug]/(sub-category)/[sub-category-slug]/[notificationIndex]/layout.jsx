@@ -16,13 +16,13 @@ const SubCategoryLayout = async ({
   categories = addSlugToCategories(categories);
   const matchingCategory = findCategoryBySlug(categories, categorySlug);
   // eslint-disable-next-line no-underscore-dangle
-  let subCategories = await getSubCategories(matchingCategory._id);
+  let subCategories = await getSubCategories(matchingCategory?._id);
 
   subCategories = addSlugToSubCategories(subCategories);
 
   const matchingSubCategory = findSubCategoryBySlug(subCategories, subCategorySlug);
 
-  const notifications = await getNotifications(matchingSubCategory._id);
+  const notifications = await getNotifications(matchingSubCategory?._id);
 
   // Exclude from subCategories the one that is currently being displayed
   const otherSubCategories = subCategories.filter(

@@ -15,7 +15,7 @@ const Head = async ({
   categories = addSlugToCategories(categories);
   const matchingCategory = findCategoryBySlug(categories, categorySlug);
   // eslint-disable-next-line no-underscore-dangle
-  let subCategories = await getSubCategories(matchingCategory._id);
+  let subCategories = await getSubCategories(matchingCategory?._id);
 
   subCategories = addSlugToSubCategories(subCategories);
 
