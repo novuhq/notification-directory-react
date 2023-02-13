@@ -10,6 +10,9 @@ const CategoryPage = async ({ params: { 'category-slug': categorySlug } }) => {
   });
 
   const matchingCategory = categories.find((category) => category.slug === categorySlug);
+  if (!matchingCategory) {
+    return <></>;
+  }
   // eslint-disable-next-line no-underscore-dangle
 
   const subCategories = await getSubCategories(matchingCategory?._id);

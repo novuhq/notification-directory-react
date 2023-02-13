@@ -12,7 +12,9 @@ const Head = async ({ params: { 'category-slug': categorySlug } }) => {
   let categories = await getCategories();
   categories = addSlugToCategories(categories);
   const matchingCategory = findCategoryBySlug(categories, categorySlug);
-
+  if (!matchingCategory) {
+    return <></>
+  }
   const title = `${MAIN_TITLE}${SEPARATOR}${matchingCategory.category}`;
 
   return <HeadMetaTags title={title} description={matchingCategory.description} />;
