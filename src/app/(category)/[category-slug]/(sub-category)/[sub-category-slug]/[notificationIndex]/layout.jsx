@@ -1,4 +1,3 @@
-import TemplateInfo from 'components/pages/sub-category/template-info';
 import Link from 'components/shared/link';
 import {
   addSlugToCategories,
@@ -6,7 +5,7 @@ import {
   findCategoryBySlug,
   findSubCategoryBySlug,
 } from 'utils';
-import { getCategories, getSubCategories, getNotifications } from 'utils/api/queries';
+import { getCategories, getSubCategories } from 'utils/api/queries';
 
 const SubCategoryLayout = async ({
   children,
@@ -15,8 +14,8 @@ const SubCategoryLayout = async ({
   let categories = await getCategories();
   categories = addSlugToCategories(categories);
   const matchingCategory = findCategoryBySlug(categories, categorySlug);
-  if (!matchingCategory?._id) {
-    return <></>;
+  if (!matchingCategory) {
+    return <>&nbsp;</>;
   }
   // eslint-disable-next-line no-underscore-dangle
   let subCategories = await getSubCategories(matchingCategory?._id);
@@ -24,10 +23,9 @@ const SubCategoryLayout = async ({
   subCategories = addSlugToSubCategories(subCategories);
 
   const matchingSubCategory = findSubCategoryBySlug(subCategories, subCategorySlug);
-  if (!matchingSubCategory?._id) {
-    return <></>;
+  if (!matchingSubCategory) {
+    return <>&nbsp;</>;
   }
-  const notifications = await getNotifications(matchingSubCategory?._id);
 
   // Exclude from subCategories the one that is currently being displayed
   const otherSubCategories = subCategories.filter(

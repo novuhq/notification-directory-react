@@ -9,7 +9,7 @@ import { getCategories, getSubCategories, getNotifications } from 'utils/api/que
 
 const SubCategorySlug = async ({ params }) => {
   if (!params['category-slug'] || !params['sub-category-slug'] || !params.notificationIndex) {
-    return <></>;
+    return <>&nbsp;</>;
   }
 
   const {
@@ -22,7 +22,7 @@ const SubCategorySlug = async ({ params }) => {
   categories = addSlugToCategories(categories);
   const matchingCategory = findCategoryBySlug(categories, categorySlug);
   if (!matchingCategory) {
-    return <></>;
+    return <>&nbsp;</>;
   }
   // eslint-disable-next-line no-underscore-dangle
   let subCategories = await getSubCategories(matchingCategory._id);
