@@ -4,7 +4,7 @@ export default {
     to: '/',
   },
   novu: {
-    to: 'https://novu.co/',
+    to: 'https://novu.co/?utm=notificationsDirectory',
   },
   // Social
   discord: {
