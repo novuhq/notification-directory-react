@@ -96,7 +96,7 @@ const TemplateInfo = ({
       const customNotificationTemp = { ...notification };
       // generate random _id for the notification
       customNotificationTemp._id = Math.random().toString(36).substr(2, 9);
-      customNotificationTemp.notification = notification.notification.replace(
+      customNotificationTemp.notification = notification?.notification?.replace(
         /{{(.*?)}}/g,
         (match) => values[match.replace(/{{|}}/g, '')]
       );
@@ -136,7 +136,7 @@ const TemplateInfo = ({
         </div>
         <div
           className="mb-10 bg-white/[0.08] px-4 py-3 backdrop-blur-xl"
-          dangerouslySetInnerHTML={{ __html: parseNotification(notification.notification) }}
+          dangerouslySetInnerHTML={{ __html: parseNotification(notification?.notification || '') }}
         />
 
         {/* <div className="mb-14">
@@ -157,7 +157,7 @@ const TemplateInfo = ({
         </div> */}
 
         <div className="flex space-x-5 md:mb-10">
-          {findVariables(notification.notification) && (
+          {findVariables(notification?.notification || []) && (
             <Dialog open={open} onOpenChange={setOpen}>
               <DialogTrigger asChild>
                 <Button size="sm" theme="purple-filled">
@@ -171,7 +171,7 @@ const TemplateInfo = ({
 
                 <form className="grid grid-cols-1 gap-4" onSubmit={formik.handleSubmit}>
                   vv
-                  {findVariables(notification.notification).map((variable, index) => (
+                  {findVariables(notification?.notification || []).map((variable, index) => (
                     <InputGroup key={index} variable={variable} formik={formik} />
                   ))}
                   <div className="mt-4">
@@ -192,7 +192,7 @@ const TemplateInfo = ({
       <div className="col-span-3">
         <Mobile
           notificationId={customNotification?._id || notification._id}
-          notificationMsg={customNotification?.notification || notification.notification}
+          notificationMsg={customNotification?.notification || notification?.notification}
           nextNotificationIndex={nextNotificationIndex}
           previousNotificationIndex={previousNotificationIndex}
         />
