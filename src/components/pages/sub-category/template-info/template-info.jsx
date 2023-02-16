@@ -35,7 +35,8 @@ const parseNotification = (notification) => {
   let enhancedNotification = notification;
   const regex = /{{(.*?)}}/g;
   const matches = notification.match(regex);
-  matches.forEach((match, index) => {
+
+  matches?.forEach((match, index) => {
     enhancedNotification = enhancedNotification.replace(
       match,
       `<span style="color: ${colors[index]}">${match}</span>`
@@ -49,7 +50,8 @@ const parseNotification = (notification) => {
 const findVariables = (notification) => {
   const regex = /{{(.*?)}}/g;
   const matches = notification.match(regex);
-  return matches.map((match) => match.replace(/{{|}}/g, ''));
+
+  return matches?.map((match) => match.replace(/{{|}}/g, ''));
 };
 
 const InputGroup = ({ variable, formik }) => (
@@ -136,6 +138,7 @@ const TemplateInfo = ({
           className="mb-10 bg-white/[0.08] px-4 py-3 backdrop-blur-xl"
           dangerouslySetInnerHTML={{ __html: parseNotification(notification.notification) }}
         />
+
         {/* <div className="mb-14">
           <h3 className="mb-3 text-xl">Variables</h3>
           <ul className="border-b border-dashed border-purple-1/20">
@@ -152,29 +155,35 @@ const TemplateInfo = ({
             ))}
           </ul>
         </div> */}
+
         <div className="flex space-x-5 md:mb-10">
-          <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
-              <Button size="sm" theme="purple-filled">
-                Send a test notification
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Fill variables to test notification</DialogTitle>
-              </DialogHeader>
-              <form className="grid grid-cols-1 gap-4" onSubmit={formik.handleSubmit}>
-                {findVariables(notification.notification).map((variable, index) => (
-                  <InputGroup key={index} variable={variable} formik={formik} />
-                ))}
-                <div className="mt-4">
-                  <Button size="sm" theme="purple-filled" type="submit">
-                    Send a test notification
-                  </Button>
-                </div>
-              </form>
-            </DialogContent>
-          </Dialog>
+          {findVariables(notification.notification) && (
+            <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger asChild>
+                <Button size="sm" theme="purple-filled">
+                  Send a test notification
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Fill variables to test notification</DialogTitle>
+                </DialogHeader>
+
+                <form className="grid grid-cols-1 gap-4" onSubmit={formik.handleSubmit}>
+                  vv
+                  {findVariables(notification.notification).map((variable, index) => (
+                    <InputGroup key={index} variable={variable} formik={formik} />
+                  ))}
+                  <div className="mt-4">
+                    <Button size="sm" theme="purple-filled" type="submit">
+                      Send a test notification
+                    </Button>
+                  </div>
+                </form>
+              </DialogContent>
+            </Dialog>
+          )}
+
           <Button to={LINKS.novu.to} size="sm" theme="gray-filled">
             Go to Novu
           </Button>
