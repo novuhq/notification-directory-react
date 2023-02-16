@@ -18,7 +18,6 @@ const getCategories = async () => {
 
 const getSubCategories = async (categoryId) => {
   try {
-    console.log(categoryId);
     const subCategoriesResponse = await fetch(
       `https://api.notifications.directory/categories/${categoryId}/sub`
     );
@@ -34,7 +33,6 @@ const getSubCategories = async (categoryId) => {
 
 const getNotifications = async (subCategoryId) => {
   try {
-    console.log(subCategoryId);
     const notificationsResponse = await fetch(
       `https://api.notifications.directory/sub/${subCategoryId}/notifications`
     );

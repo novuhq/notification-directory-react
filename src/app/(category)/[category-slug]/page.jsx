@@ -60,7 +60,6 @@ export async function generateStaticParams() {
     categories[index].slug = slugify(category.category, { lower: true });
   });
 
-  console.log(categories);
   return categories.map((category) => ({
     'category-slug': category.slug,
   }));
