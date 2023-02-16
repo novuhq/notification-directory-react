@@ -32,7 +32,11 @@ const Home = async () => {
                 <ButtonLogo className="mr-2.5 h-5 w-5" />
                 Show me
               </Button>
-              <Button theme="gray-filled" to="https://novu.co/" size="lg">
+              <Button
+                theme="gray-filled"
+                to="https://novu.co/?utm=notificationsDirectory"
+                size="lg"
+              >
                 Discover Novu
               </Button>
             </div>
