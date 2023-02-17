@@ -16,7 +16,7 @@ const Footer = () => (
             Novu
           </a>
           <br />
-          Built with <a href="text-white">ChatGPT</a>
+          Built with <a href="https://chat.openai.com">ChatGPT</a>
         </p>
       </div>
       <div className="mt-9">

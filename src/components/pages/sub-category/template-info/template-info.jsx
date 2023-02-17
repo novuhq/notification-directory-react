@@ -34,7 +34,7 @@ const variables = [
 const parseNotification = (notification) => {
   let enhancedNotification = notification;
   const regex = /{{(.*?)}}/g;
-  const matches = notification.match(regex);
+  const matches = notification?.match(regex) || [];
 
   matches?.forEach((match, index) => {
     enhancedNotification = enhancedNotification.replace(
@@ -49,7 +49,7 @@ const parseNotification = (notification) => {
 
 const findVariables = (notification) => {
   const regex = /{{(.*?)}}/g;
-  const matches = notification.match(regex);
+  const matches = notification?.match(regex) || [];
 
   return matches?.map((match) => match.replace(/{{|}}/g, ''));
 };
@@ -191,7 +191,7 @@ const TemplateInfo = ({
       </div>
       <div className="col-span-3">
         <Mobile
-          notificationId={customNotification?._id || notification._id}
+          notificationId={customNotification?._id || notification?._id}
           notificationMsg={customNotification?.notification || notification?.notification}
           nextNotificationIndex={nextNotificationIndex}
           previousNotificationIndex={previousNotificationIndex}
