@@ -67,26 +67,22 @@ const InputGroup = ({ variable, formik }) => (
   </div>
 );
 
-const TemplateInfo = ({
-  matchingCategory,
-  matchingSubCategory,
-  notifications,
-  currentNotificationIndex,
-}) => {
+const TemplateInfo = ({ matchingCategory, matchingSubCategory, notifications }) => {
   const [open, setOpen] = useState(false);
   const [customNotification, setCustomNotification] = useState(undefined);
+  const [currentNotificationIndex, setCurrentNotificationIndex] = useState(0);
+  const notification = notifications[currentNotificationIndex];
 
   const pathname = usePathname();
   const prevPath = pathname.split('/').slice(0, -1).join('/');
 
-  const notification = notifications[currentNotificationIndex];
   // Calculate index of the next notification, if it's the last notification, go back to the first one
   const nextNotificationIndex =
-    currentNotificationIndex === notifications.length - 1 ? 0 : currentNotificationIndex + 1;
+    currentNotificationIndex + 1 > notifications.length ? 0 : notification + 1;
   // Calculate index of the previous notification, if it's the first notification, go to the last one
 
   const previousNotificationIndex =
-    currentNotificationIndex === 0 ? notifications.length - 1 : currentNotificationIndex - 1;
+    notification === 0 ? notifications.length - 1 : currentNotificationIndex - 1;
 
   const formik = useFormik({
     initialValues: {},
@@ -126,12 +122,18 @@ const TemplateInfo = ({
             Notification {currentNotificationIndex + 1} of {notifications.length}
           </div>
           <div className="hidden gap-4 sm:flex">
-            <NextLink href={`${prevPath}/${previousNotificationIndex}`} className="hidden sm:block">
+            <a
+              onClick={() => setCurrentNotificationIndex(previousNotificationIndex)}
+              className="hidden sm:block"
+            >
               {'<'} Previous
-            </NextLink>
-            <NextLink href={`${prevPath}/${nextNotificationIndex}`} className="hidden sm:block">
+            </a>
+            <a
+              onClick={() => setCurrentNotificationIndex(nextNotificationIndex)}
+              className="hidden sm:block"
+            >
               Next {'>'}
-            </NextLink>
+            </a>
           </div>
         </div>
         <div

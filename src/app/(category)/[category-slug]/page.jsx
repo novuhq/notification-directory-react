@@ -38,7 +38,7 @@ const CategoryPage = async ({ params: { 'category-slug': categorySlug } }) => {
               <Link
                 theme="purple"
                 key={index}
-                to={`/${matchingCategory.slug}/${subCategory.slug}/0`}
+                to={`/${matchingCategory.slug}/${subCategory.slug}`}
               >
                 {subCategory.subCategory}
               </Link>

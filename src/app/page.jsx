@@ -25,7 +25,7 @@ const Home = async () => {
             <div className="mt-11 flex sm:mt-6 sm:items-center sm:justify-center">
               <Button
                 className="mr-6"
-                to="/e-commerce/order-confirmation/0"
+                to="/e-commerce/order-confirmation"
                 theme="purple-filled"
                 size="lg"
               >

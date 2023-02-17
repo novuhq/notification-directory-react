@@ -34,7 +34,7 @@ const CategoryCard = ({ title, subCategories, categoryId }, index) => (
               theme="purple"
               to={`/${slugify(title, { lower: true })}/${slugify(item.subCategory, {
                 lower: true,
-              })}/0`}
+              })}`}
             >
               {item.subCategory}
             </Link>

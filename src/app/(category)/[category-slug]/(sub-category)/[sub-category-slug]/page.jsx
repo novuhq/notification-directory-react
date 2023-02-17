@@ -10,19 +10,11 @@ import {
 import { getCategories, getSubCategories, getNotifications } from 'utils/api/queries';
 
 const SubCategorySlug = async ({ params }) => {
-  if (
-    !params['category-slug'] ||
-    !params['sub-category-slug'] ||
-    !params.hasOwnProperty('notificationIndex')
-  ) {
+  if (!params['category-slug'] || !params['sub-category-slug']) {
     return <>&nbsp;</>;
   }
 
-  const {
-    'category-slug': categorySlug,
-    'sub-category-slug': subCategorySlug,
-    notificationIndex,
-  } = params;
+  const { 'category-slug': categorySlug, 'sub-category-slug': subCategorySlug } = params;
 
   let categories = await getCategories();
   categories = addSlugToCategories(categories);
@@ -44,7 +36,6 @@ const SubCategorySlug = async ({ params }) => {
       matchingCategory={matchingCategory}
       matchingSubCategory={matchingSubCategory}
       notifications={notifications}
-      currentNotificationIndex={parseInt(notificationIndex)}
     />
   );
 };
@@ -72,21 +63,17 @@ export async function generateStaticParams() {
                   if (notifications.some((f) => !f.notification)) {
                     return [];
                   }
-                  return notifications.reduce((all, current2, index) => {
-                    const cat = slugify(c.category, { lower: true });
-                    const subd = slugify(current.subCategory, { lower: true });
-                    if (!cat || !subd || typeof cat !== 'string' || typeof subd !== 'string') {
-                      return all;
-                    }
-                    return [
-                      ...all,
-                      {
-                        'category-slug': cat,
-                        'sub-category-slug': subd,
-                        notificationIndex: String(index),
-                      },
-                    ];
-                  }, []);
+                  const cat = slugify(c.category, { lower: true });
+                  const subd = slugify(current.subCategory, { lower: true });
+                  if (!cat || !subd || typeof cat !== 'string' || typeof subd !== 'string') {
+                    return [];
+                  }
+                  return [
+                    {
+                      'category-slug': cat,
+                      'sub-category-slug': subd,
+                    },
+                  ];
                 }, [])
             )
           ).reduce((all, current) => [...all, ...current], []);
