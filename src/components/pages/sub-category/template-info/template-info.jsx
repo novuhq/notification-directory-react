@@ -73,9 +73,6 @@ const TemplateInfo = ({ matchingCategory, matchingSubCategory, notifications }) 
   const [currentNotificationIndex, setCurrentNotificationIndex] = useState(0);
   const notification = notifications[currentNotificationIndex];
 
-  const pathname = usePathname();
-  const prevPath = pathname.split('/').slice(0, -1).join('/');
-
   // Calculate index of the next notification, if it's the last notification, go back to the first one
   const nextNotificationIndex =
     currentNotificationIndex + 1 > notifications.length ? 0 : notification + 1;

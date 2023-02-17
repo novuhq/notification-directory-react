@@ -57,7 +57,7 @@ export async function generateStaticParams() {
                 .filter((f) => f.subCategory)
                 .map(async (current) => {
                   const notifications = await getNotifications(current._id);
-                  if (!Array.isArray(notifications)) {
+                  if (!Array.isArray(notifications) || notifications?.length === 0) {
                     return [];
                   }
                   if (notifications.some((f) => !f.notification)) {
