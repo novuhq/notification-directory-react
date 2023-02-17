@@ -75,11 +75,11 @@ const TemplateInfo = ({ matchingCategory, matchingSubCategory, notifications }) 
 
   // Calculate index of the next notification, if it's the last notification, go back to the first one
   const nextNotificationIndex =
-    currentNotificationIndex + 1 > notifications.length ? 0 : notification + 1;
+    currentNotificationIndex + 1 > notifications.length - 1 ? 0 : currentNotificationIndex + 1;
   // Calculate index of the previous notification, if it's the first notification, go to the last one
 
   const previousNotificationIndex =
-    notification === 0 ? notifications.length - 1 : currentNotificationIndex - 1;
+      currentNotificationIndex === 0 ? notifications.length - 1 : currentNotificationIndex - 1;
 
   const formik = useFormik({
     initialValues: {},
@@ -169,7 +169,6 @@ const TemplateInfo = ({ matchingCategory, matchingSubCategory, notifications }) 
                 </DialogHeader>
 
                 <form className="grid grid-cols-1 gap-4" onSubmit={formik.handleSubmit}>
-                  vv
                   {findVariables(notification?.notification || []).map((variable, index) => (
                     <InputGroup key={index} variable={variable} formik={formik} />
                   ))}
