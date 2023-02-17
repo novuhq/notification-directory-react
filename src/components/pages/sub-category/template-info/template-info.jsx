@@ -34,7 +34,7 @@ const variables = [
 const parseNotification = (notification) => {
   let enhancedNotification = notification;
   const regex = /{{(.*?)}}/g;
-  const matches = notification?.match(regex) || [];
+  const matches = typeof notification === 'string' ? notification?.match(regex) || [] : [];
 
   matches?.forEach((match, index) => {
     enhancedNotification = enhancedNotification.replace(
@@ -49,7 +49,7 @@ const parseNotification = (notification) => {
 
 const findVariables = (notification) => {
   const regex = /{{(.*?)}}/g;
-  const matches = notification?.match(regex) || [];
+  const matches = typeof notification === 'string' ? notification?.match(regex) || [] : [];
 
   return matches?.map((match) => match.replace(/{{|}}/g, ''));
 };
