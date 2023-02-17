@@ -16,6 +16,8 @@ const Mobile = ({
   notificationMsg,
   nextNotificationIndex,
   previousNotificationIndex,
+  next,
+  previous,
 }) => {
   const [currentDate, setCurrentDate] = useState(false);
   const [currentTime, setCurrentTime] = useState(false);
@@ -48,18 +50,18 @@ const Mobile = ({
   }, []);
   return (
     <div className=" relative overflow-hidden bg-mobile-gradient pb-[100%] md:h-[500px] md:pb-0">
-      <Link
-        href={`${prevPath}/${previousNotificationIndex}`}
+      <a
+        onClick={previous}
         className="absolute top-1/2 left-10 z-10 block -translate-y-1/2 lg:left-3  sm:hidden"
       >
         <ArrowLeft className="w-10" />
-      </Link>
-      <Link
-        href={`${prevPath}/${nextNotificationIndex}`}
+      </a>
+      <a
+        onClick={next}
         className="absolute top-1/2 right-10 z-10 block -translate-y-1/2 lg:right-3 sm:hidden"
       >
         <ArrowRight className="w-10" />
-      </Link>
+      </a>
       <div className="lg:-translate-y-10 sm:-mx-[45px]">
         <img
           src="/images/mobile.svg"

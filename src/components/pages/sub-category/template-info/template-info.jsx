@@ -190,6 +190,8 @@ const TemplateInfo = ({ matchingCategory, matchingSubCategory, notifications }) 
       </div>
       <div className="col-span-3">
         <Mobile
+          next={() => setCurrentNotificationIndex(nextNotificationIndex)}
+          previous={() => setCurrentNotificationIndex(previousNotificationIndex)}
           notificationId={customNotification?._id || notification?._id}
           notificationMsg={customNotification?.notification || notification?.notification}
           nextNotificationIndex={nextNotificationIndex}
