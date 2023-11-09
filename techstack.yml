@@ -1,0 +1,411 @@
+repo_name: novuhq/notification-directory-react
+report_id: 81cfb8f42825f8ca189cb977818b6f14
+repo_type: Public
+timestamp: '2023-11-09T15:12:28+00:00'
+requested_by: nevo-david
+provider: github
+branch: main
+detected_tools_count: 31
+tools:
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source: Repo Metadata
+- name: Autoprefixer
+  description: PostCSS plugin to parse CSS and add vendor prefixes to CSS rules
+  website_url: https://github.com/postcss/autoprefixer
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/2202/72d087642cfce6fef6f2dabec5bf49e8_400x400.png
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: Next.js
+  description: 'A small framework for server-rendered universal JavaScript apps '
+  website_url: https://nextjs.org/
+  version: 13.1.6
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/5936/nextjs.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: React
+  description: A JavaScript library for building user interfaces
+  website_url: https://reactjs.org/
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript UI Libraries
+  image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Alex Barashkov
+  last_updated_on: 2023-02-09 17:24:23.000000000 Z
+- name: ESLint
+  description: The fully pluggable JavaScript code quality tool
+  website_url: http://eslint.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source: Repo Metadata
+- name: Prettier
+  description: 'Prettier is an opinionated code formatter. '
+  website_url: https://prettier.io/
+  version: 2.8.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/7035/default_66f265943abed56bcdbfca1c866a4261b1fbb063.jpg
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: Formik
+  description: Build forms in React
+  website_url: https://jaredpalmer.com/formik/
+  version: 2.2.9
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Application Utilities
+  sub_category: Web Forms
+  image_url: https://img.stackshare.io/service/8846/preview.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Alex Barashkov
+  last_updated_on: 2023-02-09 17:24:23.000000000 Z
+- name: Shell
+  description: A shell is a text-based terminal, used for manipulating programs and
+    files. Shell scripts typically manage program execution.
+  website_url: https://en.wikipedia.org/wiki/Shell_script
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source: Repo Metadata
+- name: husky
+  website_url: https://github.com/typicode/husky
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/9527/5502029.jpeg
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: lint-staged
+  website_url: https://github.com/okonet/lint-staged
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/10577/11071.jpeg
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: "@commitlint/cli"
+  description: Lint your commit messages
+  package_url: https://www.npmjs.com/@commitlint/cli
+  version: 17.4.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16059/default_5fd43aeff4d6a935abc13737de01a0355210499d.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: "@commitlint/config-conventional"
+  description: Shareable commitlint config enforcing conventional commits
+  package_url: https://www.npmjs.com/@commitlint/config-conventional
+  version: 17.4.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16092/default_8725384794b44fe56f31da1d21ae759cf07be7a5.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Alex Barashkov
+  last_updated_on: 2023-01-20 17:39:54.000000000 Z
+- name: "@svgr/webpack"
+  description: SVGR webpack loader
+  package_url: https://www.npmjs.com/@svgr/webpack
+  version: 6.5.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16411/default_aa91da3cee4d961f0eea8ca5de77f399ec7ec794.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: eslint-config-airbnb
+  description: Airbnb's ESLint config, following our styleguide
+  package_url: https://www.npmjs.com/eslint-config-airbnb
+  version: 19.0.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15857/default_7c39a83d4acd952df89b1ebfdb94c8646324fbf1.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: eslint-config-prettier
+  description: Turns off all rules that are unnecessary or might conflict with Prettier
+  package_url: https://www.npmjs.com/eslint-config-prettier
+  version: 8.6.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15879/default_0b10af8ca19c215f781dc07442e75bdc831089d0.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: eslint-plugin-import
+  description: Import with sanity
+  package_url: https://www.npmjs.com/eslint-plugin-import
+  version: 2.27.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15806/default_98aa227f51aa9d787815ec3fd98d0ab2bfebbb91.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Alex Barashkov
+  last_updated_on: 2023-01-18 18:32:20.000000000 Z
+- name: eslint-plugin-jsx-a11y
+  description: Static AST checker for accessibility rules on JSX elements
+  package_url: https://www.npmjs.com/eslint-plugin-jsx-a11y
+  version: 6.7.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15845/default_6743ba96cf149a3c3c68a185199f9705d6eff80e.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Alex Barashkov
+  last_updated_on: 2023-01-18 18:32:20.000000000 Z
+- name: eslint-plugin-react
+  description: React specific linting rules for ESLint
+  package_url: https://www.npmjs.com/eslint-plugin-react
+  version: 7.32.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15817/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Alex Barashkov
+  last_updated_on: 2023-02-09 17:24:23.000000000 Z
+- name: eslint-plugin-react-hooks
+  description: ESLint rules for React Hooks
+  package_url: https://www.npmjs.com/eslint-plugin-react-hooks
+  version: 4.6.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16149/default_1f3a2fc7d882e29a43394ecdf491b8989ea3f0fa.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Alex Barashkov
+  last_updated_on: 2023-02-09 17:24:23.000000000 Z
+- name: file-loader
+  description: A file loader module for webpack
+  package_url: https://www.npmjs.com/file-loader
+  version: 6.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15834/default_4479dbac220be99e50e724b2df6cf415241d71fd.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: markdownlint-cli
+  description: MarkdownLint Command Line Interface
+  package_url: https://www.npmjs.com/markdownlint-cli
+  version: 0.33.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17273/default_b2015e9577d171c4c3f12c3c8d253c01fe63ba8d.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: postcss
+  description: Tool for transforming styles with JS plugins
+  package_url: https://www.npmjs.com/postcss
+  version: 8.4.14
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16012/default_7a88bebb451873cc63bd99007de5bd3bb8ef85de.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Nevo David
+  last_updated_on: 2023-02-16 22:58:23.000000000 Z
+  vulnerabilities:
+  - name: PostCSS line return parsing error
+    cve_id: CVE-2023-44270
+    cve_url: https://github.com/advisories/GHSA-7fh5-64p2-3v2j
+    detected_date: Oct 4
+    severity: moderate
+    first_patched: 8.4.31
+- name: postcss-import
+  description: PostCSS plugin to import CSS files
+  package_url: https://www.npmjs.com/postcss-import
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16086/default_d4e765f8a43dcfd232c8b9ee9732058bc27c727a.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Nevo David
+  last_updated_on: 2023-02-16 22:58:23.000000000 Z
+- name: prop-types
+  description: Runtime type checking for React props and similar objects
+  package_url: https://www.npmjs.com/prop-types
+  version: 15.8.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15843/default_b71c906aeda030a5e2f1fe40bf12a93be52404ab.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: react-dom
+  description: React package for working with the DOM
+  package_url: https://www.npmjs.com/react-dom
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Alex Barashkov
+  last_updated_on: 2023-02-09 17:24:23.000000000 Z
+- name: slugify
+  description: Slugifies a String
+  package_url: https://www.npmjs.com/slugify
+  version: 1.6.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17389/default_33c3173e7d0e91f7cea0eab9883ca83b157bd4a5.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Alex Barashkov
+  last_updated_on: 2023-01-18 18:32:20.000000000 Z
+- name: tailwindcss
+  description: A utility-first CSS framework for rapidly building custom user interfaces
+  package_url: https://www.npmjs.com/tailwindcss
+  version: 3.2.6
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17398/default_2cd7ed1c123f2fca074a6f4b16c4e73d5bfe82be.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
+- name: url-loader
+  description: A loader for webpack which transforms files into base64 URIs
+  package_url: https://www.npmjs.com/url-loader
+  version: 4.1.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15858/default_a2f722724df977d0f7752839e5d8845ab41f69d5.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-01-16 20:32:45.000000000 Z
