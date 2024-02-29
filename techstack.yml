@@ -2,7 +2,7 @@ repo_name: novuhq/notification-directory-react
 report_id: 81cfb8f42825f8ca189cb977818b6f14
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T09:22:49+00:00'
+timestamp: '2024-02-29T18:05:56+00:00'
 requested_by: nevo-david
 provider: github
 branch: main
@@ -42,7 +42,7 @@ tools:
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-01-16 20:32:45.000000000 Z
 - name: Next.js
-  description: 'A small framework for server-rendered universal JavaScript apps '
+  description: A small framework for server-rendered universal JavaScript apps
   website_url: https://nextjs.org/
   version: 13.1.6
   open_source: true
@@ -92,7 +92,7 @@ tools:
   detection_source_url: https://github.com/novuhq/notification-directory-react
   detection_source: Repo Metadata
 - name: Prettier
-  description: 'Prettier is an opinionated code formatter. '
+  description: Prettier is an opinionated code formatter.
   website_url: https://prettier.io/
   version: 2.8.4
   license: MIT
