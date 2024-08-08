@@ -12,7 +12,7 @@ const Footer = () => (
         </a>
         <p className="text-sm text-gray-8">
           Sponsored by{' '}
-          <a href="https://novu.co" className="text-white">
+          <a href="https://novu.co?utm_campaign=noti-dir" className="text-white">
             Novu
           </a>
           <br />

@@ -64,7 +64,7 @@ const Mobile = ({
       </a>
       <div className="lg:-translate-y-10 sm:-mx-[45px]">
         <img
-          src="/images/mobile.svg"
+          src="/images/mobile-1.svg"
           loading="eager"
           className="translate absolute top-[40px] bottom-0 left-1/2 w-[478px] -translate-x-1/2"
         />
